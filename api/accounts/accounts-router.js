@@ -48,9 +48,9 @@ md.checkAccountNameUnique,
 });
 
 router.delete('/:id',md.checkAccountId, (req, res, next) => {
-  // DO YOUR MAGIC
   try {
-    res.json('delete account')
+    await Account.deleteById(req.params.id)
+    res.json(req.account)
   }catch (err) {
     next(err)
   }
