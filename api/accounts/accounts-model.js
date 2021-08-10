@@ -12,7 +12,9 @@ const getById = id => {
 }
 
 const create = account => {
-  // DO YOUR MAGIC
+  // insert into accounts (name, budget) values ('foo', 1000)
+  const [id] = await db('acconts').insert(account)
+  return getById(id)
 }
 
 const updateById = (id, account) => {

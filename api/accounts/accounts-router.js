@@ -26,7 +26,8 @@ md.checkAccountNameUnique,
 (req, res, next) => {
   // DO YOUR MAGIC
   try {
-    res.json('post account')
+    const newAccounts = await Account.create(req.body)
+    res.status(201).json(newAccounts)
   }catch (err){
     next(err)
   }
