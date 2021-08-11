@@ -22,8 +22,8 @@ router.get('/:id',md.checkAccountId, (req, res, next) => {
 
 router.post('/',
 md.checkAccountPayload, 
-md.checkAccountNameUnique, 
-(req, res, next) => {
+md.checkAccountNameUnique,  
+async (req, res, next) => {
   try {
     const newAccounts = await Account.create({
       name:req.body.name.trim(),
