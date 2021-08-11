@@ -18,7 +18,7 @@ exports.checkAccountPayload = (req, res, next) => {
   }
 }
 
-if (error) {
+if (error.message) {
   next(error)
 }else {
   next()
