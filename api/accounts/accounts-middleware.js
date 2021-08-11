@@ -16,13 +16,13 @@ exports.checkAccountPayload = (req, res, next) => {
     error.message = 'budget of account is too large or too small'
     
   }
+  if (error.message) {
+    next(error)
+  }else {
+    next()
+  }
 }
 
-if (error.message) {
-  next(error)
-}else {
-  next()
-}
 
 exports.checkAccountNameUnique = async (req, res, next) => {
   try {
