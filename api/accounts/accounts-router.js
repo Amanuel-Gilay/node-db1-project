@@ -24,7 +24,6 @@ router.post('/',
 md.checkAccountPayload, 
 md.checkAccountNameUnique, 
 (req, res, next) => {
-  // DO YOUR MAGIC
   try {
     const newAccounts = await Account.create({
       name:req.body.name.trim(),
